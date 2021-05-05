@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'django.contrib.sites',  # 3rdly add django-allauth contribs start
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',  # end
 ]
 
 MIDDLEWARE = [
@@ -59,13 +64,34 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
+                'django.template.context_processors.request', #required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`  # 2ndly authenticate
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # Emails confirmat settx
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email' # allows auth using usernam/email
+ACCOUNT_EMAIL_REQUIRED = True                # email required to register 4 the site
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'    # verifying if users are using real email
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True      # comfirmation to avoid user typo error
+ACCOUNT_USERNAME_MIN_LENGTH = 4            # min username lenth to 4 
+LOGIN_URL = '/accounts/login/'         # login url
+LOGIN_REDIRECT_URL = '/'               # redirect url after login
+
 
 WSGI_APPLICATION = 'bossman_auction.wsgi.application'
 
