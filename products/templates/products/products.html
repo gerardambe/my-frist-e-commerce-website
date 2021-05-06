@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<!------------------product display on product home page-------------------------------------------->
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">Products</h2>
+                <!---displays extra category badges in -->
+                {% for c in current_categories %}
+                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
+                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
+                    </a>
+                {% endfor %}
+                <hr class="w-50 mb-1">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="product-container col-10 offset-1">
+                <div class="row mt-1 mb-2"></div>
+
+                <div class="row">
+                    {% for product in products %}
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card h-100 border-0">
+                            <a href="{{ product.image.url }}">
+                                <img class="image-style" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "
+                                    img/noimage.png" %}{% endif %}">
+                            </a>
+                            <div class="box-element product-element">
+                                <p>
+                                    <a href="{{ product.image.url }}"><strong>{{ product.name }}</strong></a>
+                                    <a style="display: inline-block; float:right;"
+                                        href="#">
+                                        <!--product.Category.slug display categories of thesame kind-->
+                                        <i class="fas fa-tag mr-1"></i> {{ product.Category }}
+                                    </a>
+                                </p>
+                                <hr>
+                                <a class="btn btn-outline-success" href="{{ product.image.url }}">View</a>
+                                <h5 style="display: inline-block; float:right;"> ${{ product.price }}</h5>
+                            </div>
+                        </div>
+                    
+                        <!----making a space between the products-->
+                    
+                        {% if forloop.counter|divisibleby:1 %}
+                        <div class="col-12 d-sm-none mb-5">
+                            <hr>
+                        </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:2 %}
+                        <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                            <hr>
+                        </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                        <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                            <hr>
+                        </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:4 %}
+                        <div class="col-12 d-none d-xl-block mb-5">
+                            <hr>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
