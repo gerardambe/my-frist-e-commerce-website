@@ -9,24 +9,23 @@
                 id="all-product-link">All
                 Products</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link text-white font-weight-bold logo-font mr-2" href="{% url 'products' %}?category=cars">Cars</a>
+        </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white font-weight-bold logo-font mr-2" href="#" id="clothing-link"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Clothing & accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="electronics-link">
-                <a class="dropdown-item" href="#">Men's clothing & shoes</a>
-                <a class="dropdown-item" href="#">Women's clothing & shoes</a>
-                <a class="dropdown-item" href="#">Baby & Children</a>
-                <a class="dropdown-item" href="#">Bags & luggage</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=men_clothing_shoes">Men's clothing & shoes</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=women_clothing_shoes">Women's clothing & shoes</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=baby_children">Baby & Children</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=bags_luggage">Bags & luggage</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">All
+                <a class="dropdown-item" href="{% url 'products' %}?category=men_clothing_shoes,women_clothing_shoes,baby_children,bags_luggage">All
                     Clothing</a>
             </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-white font-weight-bold logo-font mr-2"
-                href="#">Cars</a>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white font-weight-bold logo-font mr-2" href="#" id="household-link"
@@ -34,14 +33,14 @@
                 Households
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="household-link">
-                <a class="dropdown-item" href="#">Furnitures</a>
-                <a class="dropdown-item" href="#">Carpets</a>
-                <a class="dropdown-item" href="#">Fridges & Microwaves</a>
-                <a class="dropdown-item" href="#">Kitchen
+                <a class="dropdown-item" href="{% url 'products' %}?category=furnitures">Furnitures</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=carpets">Carpets</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=fridges_microwaves">Fridges & Microwaves</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=kitchen_utensils">Kitchen
                     Utensils</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item"
-                    href="#">All Households</a>
+                    href="{% url 'products' %}?category=furnitures,carpets,fridges_microwaves,kitchen_utensils">All Households</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -50,12 +49,12 @@
                 Electronics
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="electronics-link">
-                <a class="dropdown-item" href="#">Televisions</a>
-                <a class="dropdown-item" href="#">Radios & speakers</a>
-                <a class="dropdown-item" href="#">Phones & labtops</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=televisions">Televisions</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=radios_speakers">Radios & speakers</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=phones_labtops">Phones & labtops</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item"
-                    href="#">All Electronics</a>
+                    href="{% url 'products' %}?category=televisions,radios_speakers,phones_labtops">All Electronics</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -64,14 +63,14 @@
                 Bikes
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="bike-link">
-                <a class="dropdown-item" href="#">Bicycles</a>
-                <a class="dropdown-item" href="#">Moter Bikes</a>
-                <a class="dropdown-item" href="#">All Bikes</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=bicycles">Bicycles</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=moter_bikes">Moter Bikes</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=bicycles,moter_bikes">All Bikes</a>
             </div>
         </li>
         <li class="nav-item">
             <a class="nav-link text-white font-weight-bold logo-font mr-2"
-                href="#">Others</a>
+                href="{% url 'products' %}?category=others">Others</a>
         </li>
     </ul>
 </div>
