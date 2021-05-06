@@ -26,7 +26,18 @@
                 <hr class="w-50 mb-1">
             </div>
         </div>
-
+        <!---------product count-------------------------------------->
+        <div class="row mt-1 mb-2">
+            <div class="col-12 col-md-6 order-md-first">
+                <p class="text-muted mt-3 text-center text-md-left">
+                    {% if search_term or current_categories != 'None_None' %}
+                    <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
+                    {% endif %}
+                    {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                </p>
+            </div>
+        </div>
+        <!---------product display-------------------------------------->
         <div class="row">
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2"></div>
@@ -35,7 +46,7 @@
                     {% for product in products %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <div class="card h-100 border-0">
-                            <a href="{{ product.image.url }}">
+                            <a href="{% url 'product_detail' product.id %}">
                                 <img class="image-style" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "
                                     img/noimage.png" %}{% endif %}">
                             </a>
@@ -49,7 +60,7 @@
                                     </a>
                                 </p>
                                 <hr>
-                                <a class="btn btn-outline-success" href="{{ product.image.url }}">View</a>
+                                <a class="btn btn-outline-success" href="{% url 'product_detail' product.id %}">View</a>
                                 <h5 style="display: inline-block; float:right;"> ${{ product.price }}</h5>
                             </div>
                         </div>
