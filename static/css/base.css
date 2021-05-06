@@ -56,6 +56,14 @@ body {
     border: 1px solid black !important;
 }
 
+.block-divider{
+    width: 200px;
+    height: 5px;
+    border: 0px;
+    background-color: rgb(36, 14, 14);
+}
+
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

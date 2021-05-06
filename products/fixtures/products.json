@@ -1,0 +1,67 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001340155",
+            "name": "Blue Sneakers",
+            "description": "Bootcut jeans in our just-right original fit are comfortable and look great too.  5-pocket style sits below waist straight fit through seat and thigh bootcut leg 18\" leg opening cotton washable imported extended sizes and washes available online only",
+            "price": 53.99,
+            "category": 1,
+            "image_url": "",
+            "image": "blue-sneakers.jpg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "pp5001340156",
+            "name": "Bicycle",
+            "description": "Very good bicycle",
+            "price": 55.99,
+            "category": 14,
+            "image_url": "",
+            "image": "bicycle.jpg"
+        }
+    },
+    {
+      "pk": 3,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5001340157",
+        "name": "Toyota Yaris",
+        "description": "Car in good condition",
+        "price": 93.99,
+        "category": 5,
+        "image_url": "",
+        "image": "car.jpg"
+      }
+    },
+    {
+      "pk": 4,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5001340158",
+        "name": "Brown Chair",
+        "description": "good quality",
+        "price": 53.99,
+        "category": 6,
+        "image_url": "",
+        "image": "chair.jpg"
+      }
+    },
+    {
+      "pk": 5,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5001340159",
+        "name": "samsung TV",
+        "description": "good quality, 14 inches",
+        "price": 33.99,
+        "category": 11,
+        "image_url": "",
+        "image": "TV.jpg"
+      }
+    }
+]

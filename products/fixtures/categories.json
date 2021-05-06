@@ -1,0 +1,107 @@
+[
+  {
+    "pk": 1,
+    "model": "products.category",
+    "fields": {
+      "name": "men_clothing_shoes",
+      "friendly_name": "Men's clothing & shoes"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.category",
+    "fields": {
+      "name": "women_clothing_shoes",
+      "friendly_name": "Women's clothing & shoes"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.category",
+    "fields": { "name": "baby_children", "friendly_name": "Baby & Children" }
+  },
+  {
+    "pk": 4,
+    "model": "products.category",
+    "fields": { "name": "bags_luggage", "friendly_name": "Bags & luggage" }
+  },
+  {
+    "pk": 5,
+    "model": "products.category",
+    "fields": { "name": "cars", "friendly_name": "Cars" }
+  },
+  {
+    "pk": 6,
+    "model": "products.category",
+    "fields": { "name": "furnitures", "friendly_name": "Furnitures" }
+  },
+  {
+    "pk": 7,
+    "model": "products.category",
+    "fields": { "name": "carpets", "friendly_name": "Carpets" }
+  },
+  {
+    "pk": 8,
+    "model": "products.category",
+    "fields": {
+      "name": "fridges_microwaves",
+      "friendly_name": "Fridges & Microwaves"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "products.category",
+    "fields": {
+      "name": "kitchen_utensils",
+      "friendly_name": "Kitchen Utensils"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "products.category",
+    "fields": {
+      "name": "televisions",
+      "friendly_name": "Televisions"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "products.category",
+    "fields": {
+      "name": "radios_speakers",
+      "friendly_name": "Radios & speakers"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "products.category",
+    "fields": {
+      "name": "phones_labtops",
+      "friendly_name": "Phones & labtops"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "products.category",
+    "fields": {
+      "name": "bicycles",
+      "friendly_name": "Bicycles"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "products.category",
+    "fields": {
+      "name": "moter_bikes",
+      "friendly_name": "Moter Bikes"
+    }
+  },
+  {
+    "pk": 16,
+    "model": "products.category",
+    "fields": {
+      "name": "others",
+      "friendly_name": "Others"
+    }
+  }
+]
