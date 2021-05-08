@@ -29,8 +29,8 @@
                         <tr>
                             <th>Image</th>
                             <th scope="col">Product</th>
-                            <th scope="col">Qty</th>
                             <th scope="col">Unit price</th>
+                            <th scope="col">Qty</th>
                             <th scope="col">Subtotal</th>
                         </tr>
                     </thead>
@@ -44,10 +44,14 @@
                                     {% else %}{% static 'img/no_image.png' %}{% endif %}">
                                 </a>
                             </td>
-                            <td class="num small"><strong>{{ product.name }}</strong></td>
-                            
-                            <td class="num">${{ product.price }}</td>
-                        </tr>
+                            <td class="num small">
+                                <p class="my-0"><strong>{{ product.name }}</strong></p>
+                                <p class="my-0 small text-muted">SKU: {{ product.sku|upper }}</p>
+                            </td>
+                            <td class="num">${{ item.product.price }}</td>
+                            <td class="num">${{ product.quantity }}</td>
+                            <td class="num">${{ item.product.price }}</td>
+                        </tr> 
                         {% endwith %}
                         {% endfor %}
                         <tr class="total table-secondary float:right">
