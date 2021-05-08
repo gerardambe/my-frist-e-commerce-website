@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
+
 
 {% block page_header %}
     <div class="container header-container">
@@ -52,7 +54,7 @@
 
                             <!-----------------append & prepend in shopping bag---------------------------------->
                             <td>
-                                <form class="form update-form" action="#" method="post">
+                                <form class="form update-form" action="{% url 'adjust_bag' item.item_id %}" method="post">
                                     <div class="form-group">
                                         <div class="input-group">
                                             <!----input-group prepend----->
@@ -88,7 +90,7 @@
                                 <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                             </td>
 
-                            <td class="num">${{ item.product.price }}</td>
+                            <td class="num">${{ item.product.price | calc_subtotal:item.quantity }}</td>
                         </tr> 
                         {% endwith %}
                         {% endfor %}
