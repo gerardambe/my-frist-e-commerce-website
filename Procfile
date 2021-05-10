@@ -1,0 +1,1 @@
+web: gunicorn bossmanauction.wsgi:application

@@ -120,15 +120,20 @@ WSGI_APPLICATION = 'bossman_auction.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-#   DATABASES = {
-#        'default': {
-#            'ENGINE': 'django.db.backends.sqlite3',
-#            'NAME': BASE_DIR / 'db.sqlite3',
-#        }
-#    }
+if 'DATABASE_URL' in os.environ:
+    DATABASE = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://toaaeyumvnqvvs:e435c06d3ceb0d92dc0fcfff38c8cd593dc0551231e598cdda59104f2f5d5caf@ec2-54-155-226-153.eu-west-1.compute.amazonaws.com:5432/d3ioi0v4sksrm6')
+    'default': dj_database_url.parse('postgres://pphfltsbitapgt:2165f3801ed33a25fa13bc267f991e0f1f4aa7685eb4f38f5e9fa169495056d3@ec2-34-254-69-72.eu-west-1.compute.amazonaws.com:5432/ddhd1ja82faa85')
 }
 
 # Password validation
