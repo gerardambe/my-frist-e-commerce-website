@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path, os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -119,13 +120,16 @@ WSGI_APPLICATION = 'bossman_auction.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+#   DATABASES = {
+#        'default': {
+#            'ENGINE': 'django.db.backends.sqlite3',
+#            'NAME': BASE_DIR / 'db.sqlite3',
+#        }
+#    }
 
+DATABASES = {
+    'default': dj_database_url.parse('postgres://toaaeyumvnqvvs:e435c06d3ceb0d92dc0fcfff38c8cd593dc0551231e598cdda59104f2f5d5caf@ec2-54-155-226-153.eu-west-1.compute.amazonaws.com:5432/d3ioi0v4sksrm6')
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -174,6 +178,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 
 # Default primary key field type
