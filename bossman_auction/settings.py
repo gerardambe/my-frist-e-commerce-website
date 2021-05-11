@@ -120,7 +120,10 @@ WSGI_APPLICATION = 'bossman_auction.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1776462694b0a9323327a52677d1da561531d758
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
