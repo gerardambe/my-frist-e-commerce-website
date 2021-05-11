@@ -1,1 +1,1 @@
-web: gunicorn bossmanauction.wsgi:application
+web: gunicorn my-frist-e-commerce-website.wsgi:application
