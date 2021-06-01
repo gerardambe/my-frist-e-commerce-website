@@ -1,1 +1,1 @@
-web: gunicorn my-frist-e-commerce-website.wsgi:application
+web: gunicorn firsthand-boutique.wsgi:application

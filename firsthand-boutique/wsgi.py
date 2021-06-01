@@ -1,5 +1,5 @@
 """
-WSGI config for bossman_auction project.
+WSGI config for firsthand-boutique project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bossman_auction.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'firsthand-boutique.settings')
 
 application = get_wsgi_application()

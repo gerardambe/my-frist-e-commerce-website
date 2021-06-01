@@ -1,5 +1,5 @@
 """
-ASGI config for bossman_auction project.
+ASGI config for firsthand-boutique project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bossman_auction.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'firsthand-boutique.settings')
 
 application = get_asgi_application()
