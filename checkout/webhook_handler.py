@@ -30,3 +30,4 @@ class StripeWH_Handler:
         return HttpResponse(
             content=f'Payment Failed webhook received: {event["type"]}',
             status=200)
+
